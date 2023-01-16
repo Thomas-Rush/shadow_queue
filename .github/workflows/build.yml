@@ -29,6 +29,8 @@ jobs:
         run: |
           cd build/linux/x64/release/bundle/
           zip -r Linux-Bundle.zip .
+          cd -
+          mv build/linux/x64/release/bundle/Linux-Bundle.zip .
 
       - name: Release
         uses: softprops/action-gh-release@v1
@@ -60,6 +62,8 @@ jobs:
         run: |
           cd build/macos/Build/Products/Release/
           zip -r MacOS-Bundle.zip shadow_queue.app
+          cd -
+          mv build/macos/Build/Products/Release/MacOS-Bundle.zip .
 
       - name: Release
         uses: softprops/action-gh-release@v1
